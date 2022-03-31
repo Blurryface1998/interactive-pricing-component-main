@@ -1,0 +1,148 @@
+@use "../util" as *;
+
+.header {
+    background-image: url("../../../images/bg-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: rem(20);
+    height: 350px;
+    text-align: center;
+
+    &__descript {
+        background-image: url("../../../images/pattern-circles.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        padding: rem(20);
+
+        h1 {
+            padding-bottom: rem(10);
+            font-size: rem(20);
+            font-weight: 800;
+            color: var(--darkDesaturatedBlue-TextandCTA-Background);
+        }
+
+        p {
+            font-size: rem(15);
+            color: var(--grayishBlue-Text);
+            max-width: 21ch;
+            line-height: 1.6;
+            margin-inline: auto;
+        }
+    }
+}
+
+.main {
+    width: 80%;
+    margin: auto;
+    margin-block-start: rem(-140);
+    background-color: var(--white-PricingComponentBackground);
+    border: 1px solid black;
+    border-radius: rem(10);
+    text-align: center;
+    // Box shadow!!!
+
+    &__pageviews {
+        padding: rem(20);
+        color: var(--grayishBlue-Text);
+        text-transform: uppercase;
+        font-size: rem(15);
+        word-spacing: rem(5);
+        font-weight: 800;
+    }
+    &__slider {
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 95%;
+            margin: 18px 0;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::-webkit-slider-runnable-track{
+                width: 100%;
+                height: rem(10);
+                background-color: var(--lightGrayishBlue-EmptySliderBar);
+                border-radius: rem(20);
+                cursor: pointer; //Check if needed
+            }
+
+            &::-webkit-slider-thumb {
+                width: rem(36);
+                height: rem(36);
+                border-radius: 50%;
+                -webkit-appearance: none;
+                background-image: url("../../../images/icon-slider.svg");
+                background-color: var( --strongCyan-SliderBackround);
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+                margin-top: rem(-13);
+            }
+        }
+    }
+
+    &__month {
+        padding: rem(20);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            font-size: rem(30);
+            font-weight: 800;
+            padding-right: rem(15);
+            color: var(--darkDesaturatedBlue-TextandCTA-Background);
+        }
+
+        p {
+            color: var(--grayishBlue-Text);
+            font-size: rem(15);
+        }
+    }
+
+    fieldset{
+        display: grid;
+        grid-template-areas: 
+        "mon mon one two year minus"
+        "mon mon one two year minus";
+        border: none;
+        font-size: rem(15);
+        color: var(--grayishBlue-Text);
+        align-items: center;
+
+        legend:first-of-type {
+            grid-area: mon;
+            padding: 10px;
+            font-size: rem(13);
+        }
+
+        input[type=radio]:first-of-type {
+            grid-area: one;
+            justify-self: end;
+        }
+
+        input[type=radio]:last-of-type {
+            grid-area: two;
+            justify-self: end;
+        }
+
+        legend:last-of-type {
+            grid-area: year;
+            font-size: rem(13);
+        }
+
+        p {
+            grid-area: minus;
+            font-size: rem(13);
+            background: var(--lightGrayishRed-DiscountBackground);
+            color: var(--lightRed-DiscountText);
+            border-radius: rem(20);
+            span {
+                display: none;
+            }
+        }
+    }
+}
