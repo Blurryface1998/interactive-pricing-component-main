@@ -1,0 +1,93 @@
+@use "../util" as *;
+
+.toggle{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border: none;
+    color: var(--grayishBlue-Text);
+    align-items: center;
+    padding-block: rem(20);
+
+    label {
+        cursor: pointer;
+    }
+
+    label:first-of-type {
+        font-size: rem(15);
+        padding-right: rem(10);
+    }
+
+    label:last-of-type {
+        grid-area: year;
+        font-size: rem(15);
+        padding: 0 rem(10) 0 rem(15);
+    }
+
+    &__wrapper {
+        position: relative;
+        height: rem(25);
+
+        input[type=radio] {
+            margin: 0 rem(-2) 0 rem(-2);
+            opacity: 0;
+            width: rem(28);
+            height: rem(28);
+            cursor: pointer;
+        }
+    }
+
+    &__background {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        border-radius: rem(12);
+        pointer-events: none;
+        background-color: var(--lightGrayishBlue-ToggleBackground);
+    }
+
+    &__button {
+        position: absolute;
+        left: rem(4);
+        top: rem(4);
+        right: 100%;
+        width: rem(17);
+        height: rem(17);
+        border-radius: 50%;
+        background-color: var(--white-PricingComponentBackground);
+        transition: all 150ms ease-in-out;
+    }
+
+    #yearlyB:checked ~ .toggle__button {
+        left: calc(100% - 21px);
+        right: 3px;
+    }
+
+
+    p {
+        grid-area: minus;
+        font-size: rem(14);
+        background: var(--lightGrayishRed-DiscountBackground);
+        color: var(--lightRed-DiscountText);
+        border-radius: rem(20);
+        
+        @include breakpoint(large) {
+            font-size: rem(15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: rem(5);
+        }
+
+        span {
+            display: none;
+
+            @include breakpoint(large) {
+                display: block;
+                padding-left: rem(10);
+            }
+        }
+    }
+}

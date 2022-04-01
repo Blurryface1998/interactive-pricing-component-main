@@ -1,0 +1,95 @@
+@use "../util" as *;
+
+:root {
+    --width-range: 300px;
+    --thumb-size: 36px;
+}
+/*
+.range {
+    position: relative;
+    width: var(--width-range);
+    height: rem(10);
+    margin: auto;
+    overflow: visible;
+    background-color: var(--lightGrayishBlue-EmptySliderBar);
+    border-radius: rem(20);
+    cursor: pointer;
+
+    &__background {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 95%;
+            margin: 18px 0;
+            transition: 0.3s ease-in-out;
+
+            &:focus {
+                outline: none;
+            }
+            
+            &::-webkit-slider-thumb {
+                 width: var(--thumb-size);
+                 height: var(--thumb-size);
+                 background-image: url("../../../images/icon-slider.svg");
+                 background-color: var( --strongCyan-SliderBackround);
+                 background-repeat: no-repeat;
+                 background-position: center;
+                 background-size: 70%;
+                 border-radius: 50%;
+                 pointer-events: none;
+                 position: absolute;
+                 left: 0;
+                 top: calc(((var(--thumb-size) - var(--width-range))/-100) - 2px);
+                 margin-top: rem(-13);
+         
+               
+             }
+        }
+        
+    }
+    
+}*/
+
+
+
+
+
+
+
+
+
+
+
+/*input[type=range] {
+    -webkit-appearance: none;
+    width: 95%;
+    margin: 18px 0;
+    transition: 0.3s ease-in-out;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-webkit-slider-runnable-track{
+       
+    }
+
+    {
+        width: rem(36);
+        height: rem(36);
+        border-radius: 50%;
+        -webkit-appearance: none;
+        background-image: url("../../../images/icon-slider.svg");
+        background-color: var( --strongCyan-SliderBackround);
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        margin-top: rem(-13);
+
+       
+    }
+}
+*/

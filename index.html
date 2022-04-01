@@ -19,7 +19,7 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; padding-top: 30px;}
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
@@ -35,23 +35,33 @@
     <div class="main__pageviews">
       <p>100k Pageviews</p>
     </div>
-    <div class="main__slider">
-      <input type="range" name="range" id="range">
+
+    <div class="main__slider range">
+      <div class="range__background">
+        <input type="range" name="range" min="8" max="36" id="range">
+      </div>
+      <div class="range__thumb"></div>
     </div>
+
     <div class="main__month">
-      <h2>$</h2>
+      <h2 class="value">$16.00</h2>
       <p>/ month</p>
     </div>
-    <fieldset>
-      <div>
+
+    <fieldset class="main__toggle toggle" aria-label="Billing Toggle" role="radiogroup">
+
+      <label for="monthlyB">Monthly Billing</label>
+
+      <div class="toggle__wrapper">
         <input type="radio" name="billing" id="monthlyB">
         <input type="radio" name="billing" id="yearlyB">
+        <span aria-hidden="true" class="toggle__background"></span>
+        <span aria-hidden="true" class="toggle__button"></span>
       </div>
-      <div>
-      <legend id="monthlyB">Monthly Billing</legend>
-      <legend id="yearlyB">Yearly Billing</legend>
+      
+      <label for="yearlyB">Yearly Billing</label>
       <p>25% <span>discount</span></p>
-      </div>
+      
     </fieldset>
 
     <div class="main__offering">
@@ -60,8 +70,8 @@
         <li>100% data ownership</li>
         <li>Email reports</li>
       </ul>
+      <button class="button">Start my trial</button>
     </div>
-    <button>Start my trial</button>
   </main>
 
   <footer>

@@ -20,6 +20,10 @@
             font-size: rem(20);
             font-weight: 800;
             color: var(--darkDesaturatedBlue-TextandCTA-Background);
+
+            @include breakpoint(large) {
+                font-size: rem(30);
+            }
         }
 
         p {
@@ -28,61 +32,105 @@
             max-width: 21ch;
             line-height: 1.6;
             margin-inline: auto;
+
+            @include breakpoint(large) {
+                max-width: none;
+            }
         }
     }
 }
 
 .main {
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-block-start: rem(-140);
     background-color: var(--white-PricingComponentBackground);
-    border: 1px solid black;
     border-radius: rem(10);
-    text-align: center;
-    // Box shadow!!!
+    text-align: center; 
+    box-shadow: 0px 12px 23px -2px rgba(0,0,0,0.4);
+
+    @include breakpoint(large) {
+        width: 50%;
+        margin-block-start: rem(-170);
+        display: grid;
+        grid-template-areas: 
+        "view view money money"
+        "slider slider slider slider"
+        "toggle toggle toggle toggle"
+        "offering offering offering offering";
+    }
 
     &__pageviews {
-        padding: rem(20);
+        padding: rem(40) rem(20) rem(20) rem(20);
         color: var(--grayishBlue-Text);
         text-transform: uppercase;
         font-size: rem(15);
         word-spacing: rem(5);
         font-weight: 800;
+
+        @include breakpoint(large) {
+            grid-area: view;
+            justify-self: start;
+            align-self: center;
+            padding: rem(40);
+        } 
     }
+    
     &__slider {
+        position: relative;
+
+        @include breakpoint(large) {
+            grid-area: slider;
+            width: 90%;
+            align-self: center;
+            justify-self: center;
+        }
 
         input[type=range] {
             -webkit-appearance: none;
             width: 95%;
+            height: rem(15);
             margin: 18px 0;
-
-            &:focus {
-                outline: none;
-            }
-
+            outline: none;
+            border-radius: rem(20);
+            
+            
+            
             &::-webkit-slider-runnable-track{
                 width: 100%;
                 height: rem(10);
-                background-color: var(--lightGrayishBlue-EmptySliderBar);
                 border-radius: rem(20);
-                cursor: pointer; //Check if needed
+                background-color: var(--lightGrayishBlue-EmptySliderBar);
+                cursor: pointer;
             }
 
             &::-webkit-slider-thumb {
+                -webkit-appearance: none;
                 width: rem(36);
                 height: rem(36);
                 border-radius: 50%;
-                -webkit-appearance: none;
                 background-image: url("../../../images/icon-slider.svg");
                 background-color: var( --strongCyan-SliderBackround);
                 background-repeat: no-repeat;
                 background-position: center;
                 cursor: pointer;
                 margin-top: rem(-13);
+
+                
+                &:hover {
+                    box-shadow: 0px 5px 13px 3px var(--strongCyan-SliderBackround-active);
+                    transition: 0.3s ease;
+                    cursor: pointer;
+                }
+        
+                &:active {
+                    background-color: var( --strongCyan-SliderBackround-active);
+                    box-shadow: 0px 0px 15px 5px var(--strongCyan-SliderBackround);
+                }
             }
-        }
-    }
+        
+    } 
+}
 
     &__month {
         padding: rem(20);
@@ -90,10 +138,17 @@
         align-items: center;
         justify-content: center;
 
+        @include breakpoint(large) {
+            grid-area: money;
+            align-self: center;
+            justify-self: end;
+            padding: rem(40);
+        }
+
         h2 {
             font-size: rem(30);
             font-weight: 800;
-            padding-right: rem(15);
+            padding-right: rem(5);
             color: var(--darkDesaturatedBlue-TextandCTA-Background);
         }
 
@@ -103,46 +158,63 @@
         }
     }
 
-    fieldset{
-        display: grid;
-        grid-template-areas: 
-        "mon mon one two year minus"
-        "mon mon one two year minus";
-        border: none;
-        font-size: rem(15);
+    &__toggle {
+
+        @include breakpoint(large) {
+            grid-area: toggle;
+            align-self: center;
+            justify-self: center;
+            padding: rem(20);
+            margin-left: rem(100);
+        }
+    }
+
+    &__offering {
+        border-top: 1px solid var(--grayishBlue-Text);
+        padding: rem(20);
         color: var(--grayishBlue-Text);
-        align-items: center;
 
-        legend:first-of-type {
-            grid-area: mon;
-            padding: 10px;
-            font-size: rem(13);
+        @include breakpoint(large) {
+            grid-area: offering;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: rem(30);
         }
+        
+        ul {
+            list-style-image: url("../../../images/icon-check.svg");
+            list-style-position: inside;
 
-        input[type=radio]:first-of-type {
-            grid-area: one;
-            justify-self: end;
-        }
+            @include breakpoint(large) {
+                text-align: start;
+            }
 
-        input[type=radio]:last-of-type {
-            grid-area: two;
-            justify-self: end;
-        }
-
-        legend:last-of-type {
-            grid-area: year;
-            font-size: rem(13);
-        }
-
-        p {
-            grid-area: minus;
-            font-size: rem(13);
-            background: var(--lightGrayishRed-DiscountBackground);
-            color: var(--lightRed-DiscountText);
-            border-radius: rem(20);
-            span {
-                display: none;
+            li {
+                padding: rem(5) 0 rem(5) 0;
             }
         }
+
+        .button {
+            width: 60%;
+            padding: rem(15);
+            margin-top: rem(10);
+            color: var(--paleBlue-CTA-Text);
+            border: none;
+            background-color: var(--darkDesaturatedBlue-TextandCTA-Background);
+            border-radius: rem(20);
+            font-size: rem(15);
+            font-weight: 600;
+            cursor: pointer;
+
+            @include breakpoint(large) {
+                width: 30%;
+            }
+
+            &:hover, &:active {
+                color: var( --white-PricingComponentBackground);
+            }
+        }
+
     }
 }
