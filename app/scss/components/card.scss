@@ -1,7 +1,7 @@
 @use "../util" as *;
 
 .header {
-    background-image: url("../../../images/bg-pattern.svg");
+    background-image: url("/images/bg-pattern.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: rem(20);
@@ -9,7 +9,7 @@
     text-align: center;
 
     &__descript {
-        background-image: url("../../../images/pattern-circles.svg");
+        background-image: url("/images/pattern-circles.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -137,7 +137,7 @@
         }
         
         ul {
-            list-style-image: url("../../../images/icon-check.svg");
+            list-style-image: url("/images/icon-check.svg");
             list-style-position: inside;
 
             @include breakpoint(large) {
