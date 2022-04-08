@@ -77,12 +77,20 @@
     }
     
     &__slider {
-        
         @include breakpoint(large) {
             grid-area: slider;
             width: 90%;
             align-self: center;
             justify-self: center;
+        }
+
+        .hidden {
+            position: absolute;
+            left: -1000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
         }
     }
 
