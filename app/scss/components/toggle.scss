@@ -37,6 +37,8 @@
         }
     }
 
+    
+
     &__background {
         display: block;
         position: absolute;
@@ -46,6 +48,10 @@
         border-radius: rem(12);
         pointer-events: none;
         background-color: var(--lightGrayishBlue-ToggleBackground);
+    }
+
+    .active {
+        background-color: var(--strongCyan-SliderBackround);
     }
 
     &__button {
@@ -72,13 +78,13 @@
         background: var(--lightGrayishRed-DiscountBackground);
         color: var(--lightRed-DiscountText);
         border-radius: rem(20);
+        padding: rem(5);
         
         @include breakpoint(large) {
             font-size: rem(15);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: rem(5);
         }
 
         span {

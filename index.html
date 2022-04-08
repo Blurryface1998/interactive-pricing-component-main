@@ -33,18 +33,19 @@
   
   <main class="main">
     <div class="main__pageviews">
-      <p>100k Pageviews</p>
+      <p id="views">100K pageviews</p>
     </div>
 
     <div class="main__slider range">
-      <div class="range__background">
-        <input type="range" name="range" min="8" max="36" id="range">
+      <input type="range" name="range" width="100" min="1" max="5" value="3" step="1" id="slider">
+      <div class="range__selector" id="selector">
+          <div class="range__selector--btn"></div>
       </div>
-      <div class="range__thumb"></div>
+      <div id="progressBar" class="range__background"></div>
     </div>
 
     <div class="main__month">
-      <h2 class="value">$16.00</h2>
+      <h2 id="selectorValue">$16.00</h2>
       <p>/ month</p>
     </div>
 
@@ -55,7 +56,7 @@
       <div class="toggle__wrapper">
         <input type="radio" name="billing" id="monthlyB">
         <input type="radio" name="billing" id="yearlyB">
-        <span aria-hidden="true" class="toggle__background"></span>
+        <span id="bg" aria-hidden="true" class="toggle__background"></span>
         <span aria-hidden="true" class="toggle__button"></span>
       </div>
       

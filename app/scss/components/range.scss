@@ -1,95 +1,91 @@
 @use "../util" as *;
 
-:root {
-    --width-range: 300px;
-    --thumb-size: 36px;
-}
-/*
 .range {
-    position: relative;
-    width: var(--width-range);
-    height: rem(10);
+    width: 90%;
     margin: auto;
-    overflow: visible;
-    background-color: var(--lightGrayishBlue-EmptySliderBar);
-    border-radius: rem(20);
-    cursor: pointer;
+    position: relative;
+
+    input[type=range] {
+        appearance: none;
+        width: 100%;
+        height: rem(15);
+        outline: none;
+        border-radius: rem(20);
+        background-color: var(--lightGrayishBlue-EmptySliderBar);
+        cursor: pointer;
+        
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: rem(36);
+            height: rem(36);
+            cursor: pointer;
+            z-index: 3;
+            position: relative;
+            border-radius: 50%;
+            background-color: var(--strongCyan-SliderBackround);
+            background-image: url("../../../images/icon-slider.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                box-shadow: 0px 5px 13px 3px var(--strongCyan-SliderBackround-active);
+                transition: 0.3s ease;
+                cursor: pointer;
+            }
+    
+            &:active {
+                background-color: var( --strongCyan-SliderBackround-active);
+                box-shadow: 0px 0px 15px 5px var(--strongCyan-SliderBackround);
+                cursor: grabbing;
+            }
+        }
+
+        &::-moz-range-thumb {
+            appearance: none;
+            width: rem(36);
+            height: rem(36);
+            cursor: pointer;
+            z-index: 3;
+            position: relative;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--strongCyan-SliderBackround);
+            background-image: url("../../../images/icon-slider.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                box-shadow: 0px 5px 13px 3px var(--strongCyan-SliderBackround-active);
+                transition: 0.3s ease;
+                cursor: pointer;
+            }
+    
+            &:active {
+                background-color: var( --strongCyan-SliderBackround-active);
+                box-shadow: 0px 0px 15px 5px var(--strongCyan-SliderBackround);
+                cursor: grabbing;
+            }
+        }
+    }
+
+    &__selector {
+        width: rem(40);
+        height: rem(36);
+        position: absolute;
+        bottom: rem(-5);
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     &__background {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-
-        input[type=range] {
-            -webkit-appearance: none;
-            width: 95%;
-            margin: 18px 0;
-            transition: 0.3s ease-in-out;
-
-            &:focus {
-                outline: none;
-            }
-            
-            &::-webkit-slider-thumb {
-                 width: var(--thumb-size);
-                 height: var(--thumb-size);
-                 background-image: url("../../../images/icon-slider.svg");
-                 background-color: var( --strongCyan-SliderBackround);
-                 background-repeat: no-repeat;
-                 background-position: center;
-                 background-size: 70%;
-                 border-radius: 50%;
-                 pointer-events: none;
-                 position: absolute;
-                 left: 0;
-                 top: calc(((var(--thumb-size) - var(--width-range))/-100) - 2px);
-                 margin-top: rem(-13);
-         
-               
-             }
-        }
-        
-    }
-    
-}*/
-
-
-
-
-
-
-
-
-
-
-
-/*input[type=range] {
-    -webkit-appearance: none;
-    width: 95%;
-    margin: 18px 0;
-    transition: 0.3s ease-in-out;
-
-    &:focus {
-        outline: none;
-    }
-
-    &::-webkit-slider-runnable-track{
-       
-    }
-
-    {
-        width: rem(36);
-        height: rem(36);
-        border-radius: 50%;
-        -webkit-appearance: none;
-        background-image: url("../../../images/icon-slider.svg");
-        background-color: var( --strongCyan-SliderBackround);
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-        margin-top: rem(-13);
-
-       
+        width: 50%;
+        height: rem(15);
+        background-color: var(--strongCyan-SliderBackround);
+        border-radius: rem(20);
+        position: absolute;
+        top: 1px;
+        left: 0;
+        pointer-events: none;
     }
 }
-*/
