@@ -7,6 +7,7 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -25,7 +26,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/Screenshot.jpg)
+![](images/screenshot.jpg)
+
+### Links
+
+- Solution URL: (https://www.frontendmentor.io/solutions/flexbox-css-grid-javascript-Hyw2uWA7q)
+- Live Site URL: (https://blurryface1998.github.io/interactive-pricing-component-main/)
 
 ## My process
 
